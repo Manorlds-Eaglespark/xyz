@@ -51,9 +51,38 @@
     
         <div class="main">
             <h2>Create A New Parcel Delivery Order</h2>
-            <p>Order Food at your favourite restaurant menu direct or service orders from your restaurant Customers</p>
+            <p>After Filling in the form, When we get to the pick-up address, we will weigh your parcel and make you a Quote.</p>
             <div style="width:100%">
+                <div>
+                    <form action="/action_page.php">
+                        <label for="fname">PickUp Address</label>
+                        <input type="text" id="fname" name="pickup_address" placeholder="Pick up address..">
+                        
+                        <label for="lname">Destination Address</label>
+                        <input type="text" id="lname" name="destination" placeholder="Destination address..">
+
+                        <label for="lname">Detail / Description / Comment</label>
+                        <input type="text" id="lname" name="description" placeholder="Parcel description..">
+                        
+                        <label for="lname">Sender Working Phone Contact Detail</label>
+                        <input type="text" id="lname" name="user_phone" placeholder="Your phone number..">
+                        
+                        <label for="lname">Receiver Full Name</label>
+                        <input type="text" id="lname" name="receiver_name" placeholder="Receiver full name">
+                        
+                        <label for="lname">Receiver Working Phone Contact Detail</label>
+                        <input type="text" id="lname" name="receiver_phone" placeholder="Receiver's phone number..">
+                        
+                        <label for="country">Select Size Category</label>
+                        <select id="country" name="country">
+                            <option value="small">Small Parcel: Documents, Envelope items. less than 20KGs </option>
+                            <option value="medium">Medium Parcel: Small to medium box. less than 65KGs</option>
+                            <option value="large">Heavy and Large: Greater than 70KGs</option>
+                        </select>
                 
+                        <input type="submit" value="Submit Request">
+                    </form>
+                </div>
             </div>
     
         </div>
