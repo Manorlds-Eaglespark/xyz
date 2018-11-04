@@ -4,9 +4,12 @@
 
 body{
     font-family:Verdana;
-    background-color: white;
     color:#333;
     width: 100%;
+    max-width: 100%;
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-color: white;
 }
 
 .menu {
@@ -97,7 +100,6 @@ body{
   float:left;
   width:16.5%;
   margin-right: 3.5%;
-  padding:15px;
   margin-top:2.5%;
   text-align:center;
 }
