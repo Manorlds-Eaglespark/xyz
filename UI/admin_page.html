@@ -35,12 +35,6 @@
 
     <div style="overflow:auto">
         <div class="menu">
-
-            <a href="active_orders.html">Active Orders</a>
-            <a href="edit_order_select.html">Edit Destination Address</a>
-            <a href="cancel_order_select.html">Cancel Delivery</a>
-            <a href="order_history.html">Order History</a>
-            <a href="user_profile.html">User Profile</a>
             <a href="home.html">HOME</a>
             &nbsp;
 
@@ -51,13 +45,8 @@
         </div>
 
         <div class="main">
-            <p id="theme_about">Parcels, Documents, Groceries, Supplies Safe onroute ->> to your door step. Business, Home, Work,
-                Life - <img src="images/favicon.png" alt=""> SendIT Now.</p>
-            <h2>Customer Information</h2>
-            <p>Displayed are details of your previous and current orders on SendIT.</p>
-            <div>Delivered: 07</div>
-            <div>On-Transit: 02</div>
-            <p></p>
+            <h2>Admin Panel</h2>
+            <p>&nbsp;All Orders</p>
             <div style="width:100%">
                 <table>
                     <tr>
@@ -68,6 +57,10 @@
                         <th>Receiver Name</th>
                         <th>Receiver Contact</th>
                         <th>Destination</th>
+                        <th>Curret Location</th>
+                        <th>Status</th>
+                        <th>Set Current Location</th>
+                        <th>Change Status</th>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -77,6 +70,22 @@
                         <td>Prime Minister's Office</td>
                         <td>0414 253 2523</td>
                         <td>Kampala, Uganda</td>
+                        <td>Kampala Road</td>
+                        <td id="on_route">On Route</td>
+                        <td><form action="/action_page.php">
+                            <input type="text" id="fname" name="pickup_address" placeholder="">
+                            <button type="submit">Set</button>
+                        </form></td>
+                        <td>
+                            <form action="/action_page.php">
+                                <select id="country" name="country">
+                                    <option value="small">Not Picked Yet</option>
+                                    <option value="medium">On Route</option>
+                                    <option value="large">Delivered</option>
+                                </select>
+                                <button type="submit">Set</button>
+                            </form>
+                        </td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -86,6 +95,10 @@
                         <td>Prime Minister's Office</td>
                         <td>0414 253 2523</td>
                         <td>Kampala, Uganda</td>
+                        <td>Kampala</td>
+                        <td id="delivered">Delivered</td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>3</td>
@@ -95,6 +108,10 @@
                         <td>Prime Minister's Office</td>
                         <td>0414 253 2523</td>
                         <td>Kampala, Uganda</td>
+                        <td>Kampala</td>
+                        <td id="delivered">Delivered</td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>4</td>
@@ -104,6 +121,10 @@
                         <td>Prime Minister's Office</td>
                         <td>0414 253 2523</td>
                         <td>Kampala, Uganda</td>
+                        <td>Kampala</td>
+                        <td id="delivered">Delivered</td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>5</td>
@@ -113,6 +134,10 @@
                         <td>Prime Minister's Office</td>
                         <td>0414 253 2523</td>
                         <td>Kampala, Uganda</td>
+                        <td>Kampala</td>
+                        <td id="delivered">Delivered</td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>6</td>
@@ -122,6 +147,10 @@
                         <td>Kisekka Joseph</td>
                         <td>0772248621</td>
                         <td>Charm Towers, 6th Floor</td>
+                        <td>Charm Towers</td>
+                        <td id="delivered">Delivered</td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>7</td>
@@ -131,27 +160,23 @@
                         <td>Mrs. Tomusange Jennifer</td>
                         <td>075892522</td>
                         <td>Kiteso, Mbale</td>
+                        <td>Mbale</td>
+                        <td id="delivered">Delivered</td>
+                        <td></td>
+                        <td></td>
                     </tr>
             
                 </table>
             </div>
 
 
+            </div>
+
         </div>
 
-        <div class="right">
-            <h2>INFO</h2>
-            <p>SendIT is a courier service that helps users deliver parcels to different destinations. SendIT
-                provides courier quotes based on weight categories.</p>
-            &nbsp;
-            <h2>CONTACT</h2>
-            <p><img id="contact_images" src="images/call.png" alt=""> 0757877585</p>
-            <p><img id="contact_images" src="images/call.png" alt=""> 0788229573</p>
-            <p><img id="contact_images" src="images/email.png" alt=""> inquiries@sendit.com</p>
-        
-        </div>
+  
     </div>
-<div class="footer">Andela Bootcamp Cycle 14 - Anorld Mukone, 2018</div>
+    <div class="footer">Andela Bootcamp Cycle 14 - Anorld Mukone, 2018</div>
 
 
 

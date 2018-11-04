@@ -30,11 +30,14 @@ body{
 }
 #theme_about{
     color: #009688;
-    font-size: 1.8rem;
+    font-size: 1rem;
 }
 
 #delivered{
     color:green;
+}
+#on_route{
+    color:#0f97d0;
 }
 
 .father{
@@ -86,13 +89,13 @@ body{
 }
 .main {
   float:left;
-  width:55%;
+  width:60%;
   padding:0 20px;
 }
 .right {
   background-color:#fafafa;
   float:left;
-  width:21.5%;
+  width:16.5%;
   margin-right: 3.5%;
   padding:15px;
   margin-top:2.5%;
