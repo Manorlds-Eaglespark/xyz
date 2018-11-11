@@ -1,4 +1,4 @@
-# SendIT   [![Test Coverage](https://api.codeclimate.com/v1/badges/6e809a652b8b095e970b/test_coverage)](https://codeclimate.com/github/Manorlds-Eaglespark/SendIT/test_coverage)  [![Maintainability](https://api.codeclimate.com/v1/badges/6e809a652b8b095e970b/maintainability)](https://codeclimate.com/github/Manorlds-Eaglespark/SendIT/maintainability)
+# SendIT   [![Build Status](https://travis-ci.org/Manorlds-Eaglespark/SendIT.svg?branch=master)](https://travis-ci.org/Manorlds-Eaglespark/SendIT)   [![Test Coverage](https://api.codeclimate.com/v1/badges/6e809a652b8b095e970b/test_coverage)](https://codeclimate.com/github/Manorlds-Eaglespark/SendIT/test_coverage)   [![Maintainability](https://api.codeclimate.com/v1/badges/6e809a652b8b095e970b/maintainability)](https://codeclimate.com/github/Manorlds-Eaglespark/SendIT/maintainability)
 
 # Html CSS Javascript demo
 To view how an Html template proposed for this project, please visit the link below;
