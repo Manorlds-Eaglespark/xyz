@@ -9,7 +9,7 @@ install:
   
 script:
   - coverage run --source= '.'/test_app.py 
-  - coverage -report
+  - coverage report --omit=*/site-packages/*
   
 after_success:
   - coveralls
