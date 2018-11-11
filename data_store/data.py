@@ -1,6 +1,5 @@
 
 from app.models import *
-from flask_bcrypt import Bcrypt
 
 parcel1 = Parcel(1, "i5261", 1, "Delivered", "Ssebagala stage, Kisasi", "Namakwekwe, Mbale", "2 CMA books", "0757877585", "Kitebe John", "0772449361", "Small Parcel: Documents, Envelope items. less than 20KGs")
 parcel2 = Parcel(2, "i5659", 2, "Initiated by Client", "Garden City, 1st gate down from Jinja road", "Garden City, 2nd Level, Shop 32", "Women Jewellery", "0757877585", "Zimulati Nagudi", "0782203860", "Small Parcel: Documents, Envelope items. less than 20KGs")

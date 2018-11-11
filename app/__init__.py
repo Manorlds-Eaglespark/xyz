@@ -5,7 +5,7 @@ import random
 from flask_api import FlaskAPI
 from flask import request, jsonify, make_response, abort
 from app.models import User, Parcel
-from data_store.data import my_parcels
+from data_store.data import my_parcels, my_users
 
 # local import
 from instance.config import app_config
@@ -104,8 +104,8 @@ def create_app(config_name):
 
 #***************************************************************************Fetch all parcel delivery orders by a specific user
 
-    @app.route('/v1/users/<user_id>/parcels', methods=['GET'])
-    def user_parcels(user_id, **kwargs):
+    @app.route('/v1/users/<userz_id>/parcels', methods=['GET'])
+    def user_parcels(userz_id, **kwargs):
         """Fetch order from one user"""
         # Get the access token from the header
         auth_header = request.headers.get('Authorization')
@@ -120,7 +120,7 @@ def create_app(config_name):
                 results = []
 
                 for parcel in my_parcels:
-                    if parcel.sender_id == int(user_id):
+                    if parcel.sender_id == int(userz_id):
                         obj = {
                                 'id': parcel.id,
                                 'code': parcel.code,
@@ -135,7 +135,7 @@ def create_app(config_name):
                                 'size':parcel.size
                         }
                         results.append(obj)
-                if not results:
+                if len(results):
                     return make_response(jsonify({"status message": "Success", "meta": str(len(results)) + " items returned", "items": results})), 200
                 else:
                     return make_response(jsonify({"status message": "Fail- user has no orders or does not exist", "meta": str(len(results)) + " items returned"})), 404
