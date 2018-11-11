@@ -9,7 +9,7 @@ class TestFlaskApi(unittest.TestCase):
     def setUp(self):
         config_name = os.getenv('APP_SETTINGS') # config_name = "development"
         self.app = create_app(config_name).test_client()
-        self.app.environ_base['HTTP_AUTHORIZATION'] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDM2NzQ1OTQsImlhdCI6MTU0MTk0NjU5NCwic3ViIjoxfQ.eRMr4Mw0AGAMU3fajzIDMzg1jNGboZuauCiuRxJYlIs" +"_"
+        self.app.environ_base['HTTP_AUTHORIZATION'] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDM2NzY4OTcsImlhdCI6MTU0MTk0ODg5Nywic3ViIjoxfQ.xioVGMsrfzL86pcPdyXv1E-trTVkDfnQsNiutoieox8" +"_"
         
 
         self.userr = {
