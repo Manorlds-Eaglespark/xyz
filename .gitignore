@@ -1,0 +1,6 @@
+__pycache__/
+app/__pycache__/
+app/auth/__pycache__/
+data_store/__pycache__/
+instance/__pycache__/
+.pytest_cache

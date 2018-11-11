@@ -1,7 +1,6 @@
 import unittest
 import json
 import os
-
 from app import create_app
 
 
@@ -10,6 +9,8 @@ class TestFlaskApi(unittest.TestCase):
     def setUp(self):
         config_name = os.getenv('APP_SETTINGS') # config_name = "development"
         self.app = create_app(config_name).test_client()
+        self.app.environ_base['HTTP_AUTHORIZATION'] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDE5MTg2ODMsImlhdCI6MTU0MTkwNDI4NCwic3ViIjoxfQ.4ACBcO0CO-2amD1hgsydA9W4jSIWb8RoqCiyRpBLzms" +"_"
+        
 
         self.userr = {
                         "name": "Bob",
