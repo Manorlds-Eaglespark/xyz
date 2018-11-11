@@ -141,6 +141,64 @@ def create_app(config_name):
                     return make_response(jsonify({"status message": "Fail- user has no orders or does not exist", "meta": str(len(results)) + " items returned"})), 404
               
 
+#***************************************************************************Fetch a parcel delivery order
+
+    @app.route('/v1/parcels/<int:id>', methods=['GET'])
+    def my_parcel(id, **kwargs):
+        """Fetch a specific parcel with its id"""
+        # Get the access token from the header
+        auth_header = request.headers.get('Authorization')
+        access_token = auth_header.split(" ")[1][:-1]
+
+        
+        if access_token:
+         # Attempt to decode the token and get the User ID
+            user_id = User.decode_token(access_token)
+
+            if not isinstance(user_id, str):
+                #Go ahead and handle the request, the user is authenticated
+
+                for prcl in my_parcels:
+                    if prcl.id == id:
+                        parcel = prcl
+                        break
+                else:
+                    parcel = "Not there"
+
+                if not isinstance(parcel, str):                    
+                    if request.method == "GET":
+            
+                        # Handle GET request, sending back the post to the user
+                        response = {
+                                    "status":"Success, item found",
+                                    "item":{
+                                        'id': parcel.id,
+                                        'code': parcel.code,
+                                        'sender_id':parcel.sender_id,
+                                        'status':parcel.status,
+                                        'pick_up_address': parcel.pick_up_address,
+                                        'destination': parcel.destination,
+                                        'description': parcel.description,
+                                        'sender_contact': parcel.sender_contact,
+                                        'receiver_name': parcel.receiver_name,
+                                        'receiver_contact':parcel.receiver_contact,
+                                        'size':parcel.size
+
+                                    }
+                                    }
+                        return make_response(jsonify(response)), 200
+
+                else:
+                    return make_response(jsonify({"message":"Sorry, Parcel not found!"})), 404
+            else:
+                # user is not legit, so the payload is an error message
+                message = user_id
+                response = {
+                    'message': message
+                }
+                # return an error response, telling the user he is Unauthorized
+                return make_response(jsonify(response)), 401
+
 
 
 
