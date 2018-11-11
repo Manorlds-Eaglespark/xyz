@@ -1,3 +1,4 @@
+
 # app/models.py
 import os
 from flask_bcrypt import Bcrypt
@@ -56,4 +57,29 @@ class User:
 		except jwt.InvalidTokenError:
 			# the token is invalid, return an error string
 			return "Invalid token. Please register or login"
+
+
+
+
+class Parcel:
+	"""This class defines the Orders."""
+
+	def __init__(self, id, code, sender_id, status,  pick_up_address, destination, description, sender_contact, receiver_name, receiver_contact, size):
+		"""Initialize the post."""
+		self.id = id
+		self.code = code
+		self.sender_id = sender_id
+		self.status = status
+		self.pick_up_address = pick_up_address
+		self.destination = destination
+		self.description = description
+		self.sender_contact = sender_contact
+		self.receiver_name = receiver_name
+		self.receiver_contact = receiver_contact
+		self.size = size
+
+
+	def __repr__(self):
+		"""Return a representation of a post instance."""
+		return "<Parcel: {}>".format(self.code)
 
