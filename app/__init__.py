@@ -3,6 +3,7 @@
 import os
 import random
 from flask_api import FlaskAPI
+from flask_cors import CORS
 from flask import request, jsonify, make_response, abort
 from app.models import User, Parcel
 from data_store.data import my_parcels, my_users
@@ -16,6 +17,7 @@ def create_app(config_name):
     app = FlaskAPI(__name__, instance_relative_config=True)
     app.config.from_object(app_config['development'])
     app.config.from_pyfile('config.py')
+    CORS(app)
 
 #***************************************Fetch all parcel delivery orders & Make a new parcel delivery order
 
@@ -262,6 +264,98 @@ def create_app(config_name):
                 # return an error response, telling the user he is Unauthorized
                 return make_response(jsonify(response)), 401
 
+
+
+    @app.route('/v1/posts', methods=['GET'])
+    def get_member_posts():
+        """get posts for united-church"""
+        return make_response(jsonify([
+    {
+        "id":1,
+        "name": "Joseph Omoding",
+        "message": "God is so God, yesterday today and tomorrow",
+        "image_url": "https://www.rainbowtoken.com/wp-content/uploads/2018/01/20-Bible-Verses-About-Strength-That-Will-Lift-Your-Soul.jpg",
+        "created-at":"443423434234"
+    },
+    {
+        "id":2,
+        "name": "Ronald Mukisa",
+        "message": "This is the way of the Lord",
+        "image_url": "https://media.swncdn.com/cms/GODTUBE/60894-27804-10312015-psalm-23-4-social-1.jpg",
+        "created-at":"443423434234"
+    },
+    {
+        "id":3,
+        "name": "Tom Kaweesa",
+        "message": "We thank God for all the testimonies here",
+        "image_url": "https://media.swncdn.com/cms/BST/54252-god-bible-verses.800w.tn.webp",
+        "created-at":"443423434234"
+    },
+    {
+        "id":4,
+        "name": "Crystal Omubulizi",
+        "message": "Christ is everything. He loved us first.",
+        "image_url": "https://images.knowing-jesus.com/w/400/19-PSALMS/Psalm+103-5+He+Satisify+Your+Year+With+Good+Things+red.jpg",
+        "created-at":"443423434234"
+    }
+]
+)), 200
+
+    
+    @app.route('/v1/profiles', methods=['GET'])
+    def get_church_profiles():
+        """get church profiles for united-church"""
+        return make_response(jsonify( [
+        {
+            "id":1,
+            "name": "Life church",
+            "location": "Kampala",
+            "pastor": "the pastor's name",
+            "service_time": "Sundays 8AM - 12PM",
+            "contact":"443423434234"
+        },
+        {
+            "id":2,
+            "name": "Watoto",
+            "location": "Kampala",
+            "pastor": "the pastor's name",
+            "service_time": "Sunday mornings",
+            "contact":"455555453"
+        },
+        {
+            "id":3,
+            "name": "Bukoto C/U",
+            "location": "Bukoto",
+            "pastor": "the pastor's  name",
+            "service_time": "Sunday mornings",
+            "contact":"2343523432"
+        },
+        {
+            "id":4,
+            "name": "St. Balikudembe",
+            "location": "Down town, Kampala",
+            "pastor": "the pastor's name",
+            "service_time": "Sunday mornings",
+            "contact":"3456434"
+        },
+        {
+            "id":5,
+            "name": "Redeemed Church",
+            "location": "Kalerwe",
+            "pastor": "the pastor's name",
+            "service_time": "Monday mornings",
+            "contact":"2342342342"
+        },
+        {
+            "id":6,
+            "name": "St. Mathias Mulumba",
+            "location": "Kireka",
+            "pastor": "the pastor's name",
+            "service_time": "Sunday mornings",
+            "contact":"4355654343"
+        }
+    ]
+    )), 200
 
 
 
